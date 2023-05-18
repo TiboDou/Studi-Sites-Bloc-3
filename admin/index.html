@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Studi - Bloc 3 - Admin</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Formulaire et popup ajout produit -->
+
+    <div class="add-product-popup">
+      <div class="overlay popup-trigger"></div> 
+        <div class="popup">
+          <div class="popup-header">
+            <button class="close-popup popup-trigger">X</button>
+            <h1>Ajouter un produit</h1>
+          </div>
+          <div>
+            <form action="#" method="post" id="add-product-form" class="add-product-form">
+            <div class="popup-body">
+              <div class="add-product-form">
+                <label for="no_categorie">Catégorie : </label>
+                <input type="number" name="no_categorie" id="add_no_categorie" min="1" max="10" minlength="1" maxlength="2" placeholder="Le numéro" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="libelle">Libellé : </label>
+                <input type="text" name="libelle" id="add_libelle" minlength="2" maxlength="30" placeholder="Le nom du produit" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="description">Description : </label>
+                <input type="text" name="description" id="add_description" maxlength="250" placeholder="250 caractères maximum" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="prix">Prix : </label>
+                <input type="text" name="prix" id="add_prix" minlenght="1" maxlength="7" placeholder="1.5" required>
+              </div>
+      
+              <div class="add-product-form">
+                <label for="url_img">Url illustration : </label>
+                <input type="text" name="url_img" id="add_url_img" maxlength="250" placeholder="L'url de l'image" required>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <div class="add-product-form div-btn-submit">
+                <input type="submit" value="Ajouter" class="btn-submit">
+              </div>
+            </div>
+            </form>
+          </div>
+      </div>
+    </div> 
+
+    <!-- Formulaire et popup ajout promotion sur produit -->
+
+    <div class="add-promo-popup">
+      <div class="overlay add-promo-popup-trigger"></div> 
+        <div class="add-prom-popup">
+          <div class="popup-header">
+            <button class="close-popup add-promo-popup-trigger">X</button>
+            <h1>Ajouter une promotion</h1>
+          </div>
+          <div>
+            <form action="#" method="post" id="add-promo-form" class="add-promo-form">
+            <div class="popup-body">
+              <div class="add-product-form">
+                <label for="pourcentage">Pourcentage : </label>
+                <input type="text" name="pourcentage" id="pourcentage" minlength="1" maxlength="5" placeholder="Vous voyez ce que ça fait déjà un million ?" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="date_debut">Date de début : </label>
+                <input type="text" name="date_debut" id="date_debut" minlength="10" maxlength="10" placeholder="Sous la forme : AAAA-MM-JJ" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="date_Fin">Date de fin : </label>
+                <input type="text" name="date_Fin" id="date_Fin" minlength="10" maxlength="10" placeholder="Sous la forme : AAAA-MM-JJ" required>
+              </div>
+
+              <div class="popup-footer">
+                <div class="add-promo-form div-btn-submit">
+                  <input type="submit" value="Ajouter" class="btn-submit">
+                </div>
+              </div>
+            </div>
+            </form>
+          </div>
+      </div>
+    </div> 
+
+    <!-- CODE POPUP DE MODIFICATION D'UN PRODUIT -->
+
+    <div class="update-product-popup">
+      <div class="overlay update-popup-trigger"></div> 
+        <div class="popup">
+          <div class="popup-header">
+            <button class="close-popup update-popup-trigger">X</button>
+            <h1>Modifier un produit</h1>
+          </div>
+          <div>
+            <form action="#" method="put" id="update-product-form" class="update-product-form">
+            <div class="popup-body">
+              <div class="update-product-form">
+                <label for="no_categorie">Catégorie : </label>
+                <input type="number" name="no_categorie" id="update_no_categorie" min="1" max="10" minlength="1" maxlength="2" placeholder="Le numéro" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="libelle">Libellé : </label>
+                <input type="text" name="libelle" id="update_libelle" minlength="2" maxlength="30" placeholder="Le nom du produit" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="description">Description : </label>
+                <input type="text" name="description" id="update_description" maxlength="250" placeholder="250 caractères maximum" required>
+              </div>
+
+              <div class="add-product-form">
+                <label for="prix">Prix : </label>
+                <input type="text" name="prix" id="update_prix" minlenght="1" maxlength="6" placeholder="1.5" required>
+              </div>
+      
+              <div class="add-product-form">
+                <label for="url_img">Url illustration : </label>
+                <input type="text" name="url_img" id="update_url_img" maxlength="250" placeholder="L'url de l'image" required>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <div class="add-product-form div-btn-submit">
+                <input type="submit" value="Enregistrer" class="btn-submit">
+              </div>
+              <button type="button" class="update-promo-btn promo-popup-trigger">Modifier promotion</button>
+            </div>
+            </form>
+          </div>
+      </div>
+    </div> 
+
+
+
+    <!-- CODE POPUP DE SUPPRESSION D'UN PRODUIT -->
+
+    <div class="delete-product-popup">
+      <div class="overlay delete-popup-trigger"></div> 
+        <div class="delete-popup">
+          <div class="delete-popup-header">
+            <button class="close-popup delete-popup-trigger">X</button>
+            <h3>/!\ Supprimer ce produit ?</h3>
+          </div>
+          <div>
+            <form action="#" method="put" id="delete-product-form" class="delete-product-form">
+              <div class="delete-product-form div-btn-submit">
+                <input type="submit" value="Oui, supprimer" class="delete-btn-submit">
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+
+    <!-- Le reste de la page -->
+
+    <header>
+      <div id="left-side">
+        <h1>Dernameco</h1>
+        <h2>Liste des produits</h2>
+        <button class="add-product-btn popup-trigger">Ajouter un produit</button>
+      </div>
+      <div id="right-side">
+        <form id="login-form" action="#" method="POST">
+          <label for="username">Login :</label>
+          <input type="text" id="username" name="username" required>
+        
+          <label for="password">Mot de passe :</label>
+          <input type="password" id="password" name="password" required>
+        
+          <button type="submit">Se connecter</button>
+        </form>
+      </div>
+    </header>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Libellé</th>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Promo</th>
+          <th>Catégorie</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="liste_produits">
+        <!-- Les lignes du tableau sont générées dynamiquement ici -->
+      </tbody>
+    </table>
+  </body>  
+</html>

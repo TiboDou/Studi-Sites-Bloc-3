@@ -1,0 +1,136 @@
+/* Styles généraux */
+body {
+  font-family: Calibri;
+  margin: 0;
+  padding: 1em;
+  background-color: #F5F9F6;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-container label {
+  font-size: 1.5rem;
+}
+
+.filter-container select {
+  padding: 10px;
+  margin:0.1em;
+  background-color: #4CAF50;
+  color: #fff;
+  border: 2px solid #357f63;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-container select:hover {
+  background-color: #45a049;
+}
+
+.filter-container select:focus {
+  outline: none;
+}
+
+select option {
+  border-bottom: 2px solid #ccc;
+}
+
+
+
+/* Une grille, 6 colonnes qui se partagent la largeur de l'écran équitablement 
+   Servira de toute évidence pour afficher 6 produits par ligne.
+*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em 1em;
+}
+  
+/* Ici on va gérer la disposition des éléments à l'intérieur des éléments produits */
+.produits {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding: 1em;
+  }
+
+.produits:hover {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+
+  
+.produits img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: gray;
+  }
+  
+.produits .libelle {
+  color: black;
+}
+  
+.produits .description {
+  font-size: 0.8em;
+  line-height: 1.2;
+  overflow: hidden; 
+}
+
+.prix_container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between; /* Afin d'afficher le prix à gauche et la promo à droite */
+  margin-top: auto; /*pousse le plus possible vers le bas*/
+}
+  
+.prix_container .prix {
+  font-size: 1.4em;
+  color: black;
+  font-weight: bold;  
+}
+  
+.prix_container .promotion {
+  font-size: 2em;
+  color: red;
+  font-family: Arial;
+  font-weight: 900;
+}
+
+
+
+/* Style pour les pages 
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+}
+.pagination-number,
+.pagination-button{
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: .2rem;
+}
+.pagination-number:hover,
+.pagination-button:not(.disabled):hover {
+  background: #fff;
+}
+.pagination-number.active {
+  color: #fff;
+  background: #0085b6;
+}  
+*/
