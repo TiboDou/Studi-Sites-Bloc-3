@@ -117,7 +117,7 @@ function getPromosAdmin(no_produit, promoElement) {
 
 
         } else {
-          promoElement.innerHTML = '<button class="add-promo-btn">Ajouter promotion</button>';
+          promoElement.innerHTML = '<button class="add-promo-btn">Ajouter promotion</button>'; //On ajoute le potit bouton si pas de promotion
 
           const addPromoBtn = promoElement.querySelector('.add-promo-btn');
           addPromoBtn.addEventListener('click', () => {
@@ -373,7 +373,7 @@ function submitUpdateBtn(no_produit) {
     });
 
 
-    //Effectuer une requête POST vers l'api pour envoyer les inputs du formulaire
+    //Effectuer une requête PUT vers l'api pour envoyer les inputs du formulaire
     fetch("https://studi-bloc3-api-td.herokuapp.com/produits/" + no_produit, {
       method: 'PUT',
       headers: {
@@ -488,7 +488,7 @@ function testSaisieUtilisateurAddUpdate(categorie, libelle, description, prix, u
   const isValidLibelle = validationSaisieLibelle(libelle);
 
   if (!isValidLibelle) {
-    alert('Veuillez cesser les carabistouilles : 30 caractères maximum, pas de caractères spéciaux en dehors de .,!');
+    alert('Erreur dans le libellé : 30 caractères maximum, pas de caractères spéciaux en dehors de .,!');
     return false;
   } 
 
@@ -497,7 +497,7 @@ function testSaisieUtilisateurAddUpdate(categorie, libelle, description, prix, u
   const isValidDescription = validationSaisieDescription(description);
 
   if (!isValidDescription) {
-    alert('Veuillez cesser les carabistouilles : 250 caractères maximum, pas de caractères spéciaux en dehors de .,!');
+    alert('Erreur dans la description : 250 caractères maximum, pas de caractères spéciaux en dehors de .,!');
     return false;
   } 
 
@@ -515,7 +515,7 @@ function testSaisieUtilisateurAddUpdate(categorie, libelle, description, prix, u
   const isValidUri = validationSaisieImg(url_img);
 
   if (!isValidUri) {
-    alert('Veuillez cesser les carabistouilles : 250 caractères maximum, doit se terminer par .jpg ou .png');
+    alert('Erreur dans la saisie de l\'url de l\'image : 250 caractères maximum, doit se terminer par .jpg ou .png');
     return false;
   } 
 
@@ -537,7 +537,7 @@ function validationSaisieCategorie(categorie) {
 }
 
 function validationSaisieLibelle(libelle) {
-  // Expression régulière pour les catégories, à noter que dans le cadre de ce projet j'ai décide de me limiter à 10 catégories 
+  // Expression régulière pour les libellés
   const regex = /^[a-zA-Z0-9.,'!àôîéèçùû ]+$/
 
   if ((regex.test(libelle)) && (libelle.length <= 30)) {
@@ -550,7 +550,7 @@ function validationSaisieLibelle(libelle) {
 }
 
 function validationSaisieDescription(description) {
-  // Expression régulière pour les catégories, à noter que dans le cadre de ce projet j'ai décide de me limiter à 10 catégories 
+  // Expression régulière pour les descriptions
   const regex = /^[a-zA-Z0-9.,'!àôîéèçùû  ]+$/
 
   if ((regex.test(description)) && (description.length <= 250)) {
@@ -563,8 +563,8 @@ function validationSaisieDescription(description) {
 }
 
 function validationSaisiePrix(prix) {
-  // Expression régulière pour les catégories, à noter que dans le cadre de ce projet j'ai décide de me limiter à 10 catégories 
-  const regex = /^([1-9][0-9]?|10000)(\.[0-9]{1,2})?$/
+  // Expression régulière pour les prix
+  const regex = /^(0|[1-9]\d{0,3})(\.\d{1,2})?$/;
 
   if (regex.test(prix)) {
     // Le prix est au bon format
@@ -594,7 +594,7 @@ function validationSaisieImg(url_img) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  // On appelle les fonction pour gérer l'affichage des popups, je ne suis pas fan de JS, en fait, c'est la première fois que je joue réellement avec le DOM, c'est sympa mais bordel ça devient illisible avec 400 lignes, il faut vraiment que je vois comment séparer en plusieurs fichiers, sinon, ça va vous ?
+  // On appelle les fonction pour gérer l'affichage des popups
   popupAddProduct();
   popupAddPromo();
   popupUpdateProduct();
